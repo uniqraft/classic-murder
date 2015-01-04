@@ -37,7 +37,7 @@ public class TeleportFix implements Listener {
 		this.server = server;
 	}
 
-	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+	/*@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 	public void onPlayerTeleport(PlayerTeleportEvent event) {
 
 		final Player player = event.getPlayer();
@@ -49,11 +49,9 @@ public class TeleportFix implements Listener {
 			public void run() {
 				// Refresh nearby clients
 				updateEntities(getPlayersWithin(player, visibleDistance));
-
-				System.out.println("Applying fix ... " + visibleDistance);
 			}
 		}, TELEPORT_FIX_DELAY);
-	}
+	}*/
 
 	public void updateEntities(List<Player> observers) {
 		// Refresh every single player

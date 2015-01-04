@@ -57,15 +57,9 @@ public class Tools {
 		sendMessageAll(server, message, null);
 	}
 
-	public static void sendMessageAll(Server server, String message,
-			Player ignored) {
-		Player[] arrayOfPlayer;
-		int j = (arrayOfPlayer = (Player[]) server.getOnlinePlayers().toArray()).length;
-		for (int i = 0; i < j; i++) {
-			Player player = arrayOfPlayer[i];
-			if (player != ignored) {
-				player.sendMessage(message);
-			}
+	public static void sendMessageAll(Server server, String message, Player ignored) {
+		for (Player player : server.getOnlinePlayers()) {
+			player.sendMessage(message);
 		}
 	}
 

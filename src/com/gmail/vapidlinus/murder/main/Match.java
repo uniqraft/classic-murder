@@ -108,7 +108,7 @@ public class Match {
 	}
 
 	public boolean canMatchStart(boolean showMessages) {
-		if (mplayers.size() < 3) {
+		if (mplayers.size() < 2) {
 			if (showMessages) {
 				Tools.sendMessageAll(plugin.getServer(), ChatContext.ERROR_NOTENOUGHPLAYERSTOSTART);
 			}

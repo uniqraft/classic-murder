@@ -1,0 +1,9 @@
+name: Murder Classic
+main: com.gmail.vapidlinus.murder.main.Murder
+version: 1.1
+description: Murder V1 updated to Bukkit 1.8
+
+commands:
+   murder:
+      description: Murder
+      usage: /<command>

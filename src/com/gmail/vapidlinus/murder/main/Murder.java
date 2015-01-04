@@ -1,5 +1,7 @@
 package com.gmail.vapidlinus.murder.main;
 
+import java.util.Collection;
+
 import com.gmail.vapidlinus.murder.commandexecutors.MCommandExecutor;
 import com.gmail.vapidlinus.murder.listeners.BlockListener;
 import com.gmail.vapidlinus.murder.listeners.EntityListener;
@@ -21,12 +23,13 @@ public class Murder extends JavaPlugin {
 
 	public void onEnable() {
 		match = new Match(this);
-		Player[] arrayOfPlayer;
-		int j = (arrayOfPlayer = (Player[]) getServer().getOnlinePlayers().toArray()).length;
-		for (int i = 0; i < j; i++) {
-			Player player = arrayOfPlayer[i];
+		
+		// Register online players
+		Collection<? extends Player> arrayOfPlayer = getServer().getOnlinePlayers();
+		for (Player player : arrayOfPlayer) {
 			match.addMPlayer(new MPlayer(player.getName(), false, false, this));
 		}
+		
 		registerListeners();
 		startLoops();
 
